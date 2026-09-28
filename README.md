@@ -1,18 +1,28 @@
-# The Copper Table — Modern Bistro
+# PJoker Web Development
 
-A mobile-first South African restaurant website template by PJoker Web Development.
+The main portfolio website for PJoker Web Development.
 
-The Copper Table is a fictional Pretoria bistro used as a portfolio demo. Replace the branding, menu, prices, photos, address, hours and contact details for a real client.
+## Purpose
+A professional South African web-development portfolio designed to showcase demo websites and turn visitors into client enquiries.
 
-Features:
-- Responsive mobile-first layout
-- HTML menu with prices
-- WhatsApp booking request
-- Click-to-call and WhatsApp actions
-- Opening hours and location
-- Google Maps directions
-- Food and interior photography
-- Plain HTML, CSS and JavaScript
-- Ready for GitHub Pages, Netlify or Vercel
+## Current stack
+- Plain HTML
+- CSS
+- JavaScript
+- No backend required for the first version
+- Ready for Vercel, Netlify or GitHub Pages
 
-Files: index.html, css/style.css, js/main.js
+## Workflow
+- `main` = production
+- Feature branches = work in progress
+- Vercel should create preview deployments for branches/pull requests
+
+## Important
+Portfolio projects are demo concepts unless explicitly replaced with real client work.
+
+## Next steps
+1. Connect this repository to Vercel.
+2. Add the real WhatsApp number and email.
+3. Build the first live restaurant demo.
+4. Add live demo URLs to portfolio cards.
+5. Add more demo sites as the portfolio grows.
