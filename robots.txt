@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://pjwebsite-five.vercel.app/sitemap.xml
