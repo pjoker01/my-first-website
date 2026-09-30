@@ -25,3 +25,13 @@
 .home-cta{width:min(1120px,88%);margin:0 auto 110px;padding:76px 7vw;border:1px solid rgba(255,255,255,.1);border-radius:30px;text-align:center;background:radial-gradient(circle at 50% 0,rgba(244,184,96,.14),transparent 52%),rgba(255,255,255,.035)}.home-cta h2{max-width:760px;margin:0 auto 18px;font:800 clamp(2.8rem,5.5vw,5.2rem)/.92 "Bricolage Grotesque";letter-spacing:-.06em}.home-cta p{max-width:590px;margin:0 auto;color:#85817a;font-size:.78rem;line-height:1.8}.home-cta .btn{margin-top:28px}
 @media(max-width:900px){.home-hero{min-height:auto;grid-template-columns:1fr;padding-top:68px}.home-visual{min-height:390px}.home-service-grid,.home-work-grid,.home-price-grid{grid-template-columns:1fr}.home-strip{grid-template-columns:1fr}.home-strip-item{border-right:0;border-bottom:1px solid rgba(255,255,255,.1)}.home-strip-item:last-child{border-bottom:0}.home-section-head{display:block}.home-section-intro{margin-top:20px}.home-feature{grid-template-columns:1fr;gap:45px}}
 @media(max-width:560px){.home-hero,.home-section,.home-pricing,.home-feature,.home-cta{width:90%}.home-hero{padding:62px 0 58px}.home-title{font-size:3.45rem}.home-lead{font-size:.9rem}.home-visual{min-height:310px}.home-showcase{width:92%;min-height:245px;padding:22px}.home-showcase h2{margin-top:58px;font-size:2.2rem}.home-orbit{width:95%}.home-orbit.two{width:100%}.home-service{min-height:190px;padding:26px}.home-service h3{margin-top:42px}.home-project-art{height:230px}.home-feature,.home-pricing{padding-bottom:85px}.home-cta{padding:55px 22px;margin-bottom:75px}}
+
+.home-faq{width:min(1120px,88%);margin:auto;padding:0 0 120px}
+.home-faq-list{border-top:1px solid rgba(255,255,255,.1);max-width:900px}
+.home-faq-list details{border-bottom:1px solid rgba(255,255,255,.1);padding:20px 0}
+.home-faq-list summary{cursor:pointer;list-style:none;font:700 1rem "Bricolage Grotesque";display:flex;justify-content:space-between;gap:20px}
+.home-faq-list summary::-webkit-details-marker{display:none}
+.home-faq-list summary:after{content:"+";color:#f4b860;font-size:1.1rem}
+.home-faq-list details[open] summary:after{content:"−"}
+.home-faq-list details p{color:#85817a;line-height:1.8;font-size:.78rem;max-width:760px;margin:14px 0 3px}
+@media(max-width:560px){.home-faq{padding-bottom:85px}}
