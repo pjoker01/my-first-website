@@ -40,68 +40,72 @@ header{z-index:60!important}
 .assistant-panel{z-index:1!important;pointer-events:auto!important}
 </style>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"PJoker Web Development","url":"https://pjwebsite-five.vercel.app/","description":"Modern, mobile-first website design and development for businesses, entrepreneurs and individuals in Pretoria and South Africa.","areaServed":{"@type":"Country","name":"South Africa"},"address":{"@type":"PostalAddress","addressLocality":"Pretoria","addressCountry":"ZA"},"sameAs":[]}</script>
-<style id="pj-home-layout-overrides">
-/* Final compact homepage controls */
+
+<style id="pj-shared-floating-layout">
+/* Match the shared inner-page navigation/floating controls exactly. */
 header{
-  position:fixed!important;
-  top:0!important;left:0!important;right:0!important;
-  height:64px!important;min-height:64px!important;
-  padding:10px 5vw!important;
-  z-index:100!important;
+  position:sticky!important;
+  top:0!important;
+  z-index:30!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:space-between!important;
+  padding:18px 5vw!important;
+  border-bottom:1px solid rgba(255,255,255,.07)!important;
+  background:rgba(7,7,10,.68)!important;
+  backdrop-filter:blur(22px)!important;
 }
-body{padding-top:64px!important}
+.drawer-backdrop{
+  position:fixed!important;
+  inset:0!important;
+  z-index:40!important;
+}
 .drawer{
   position:fixed!important;
-  top:74px!important;
-  right:14px!important;
+  top:0!important;
+  right:0!important;
   left:auto!important;
-  width:min(310px,calc(100vw - 28px))!important;
-  height:auto!important;
-  max-height:calc(100dvh - 96px)!important;
-  padding:18px!important;
-  border-radius:18px!important;
-  overflow-y:auto!important;
-  z-index:101!important;
+  width:min(410px,90vw)!important;
+  height:100dvh!important;
+  padding:28px!important;
+  z-index:41!important;
 }
-.drawer-nav{margin-top:8px!important}
+.drawer-nav{margin-top:20px!important}
 .drawer-nav a{
-  padding:10px 2px!important;
-  font-size:1rem!important;
-  line-height:1.1!important;
+  padding:19px 4px!important;
+  font:700 1.45rem "Bricolage Grotesque"!important;
+  line-height:normal!important;
 }
-.drawer-head{padding-bottom:12px!important}
-.drawer-head strong{font-size:1.05rem!important}
-.drawer-close{width:34px!important;height:34px!important;font-size:1rem!important}
-.drawer-note{margin-top:18px!important;padding-top:12px!important;font-size:.64rem!important}
-.drawer-backdrop{z-index:99!important}
-.menu-toggle{z-index:110!important}
 .assistant-float{
   position:fixed!important;
-  right:20px!important;
-  bottom:88px!important;
-  z-index:110!important;
+  right:22px!important;
+  bottom:92px!important;
+  z-index:26!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:8px!important;
+  padding:10px 14px!important;
   width:auto!important;
-  max-width:calc(100vw - 40px)!important;
+  max-width:none!important;
 }
 .wa{
   position:fixed!important;
-  right:20px!important;
-  bottom:20px!important;
-  z-index:110!important;
+  right:22px!important;
+  bottom:22px!important;
+  z-index:25!important;
+  width:58px!important;
+  height:58px!important;
 }
 @media(max-width:560px){
-  header{height:58px!important;min-height:58px!important;padding:9px 4vw!important}
-  body{padding-top:58px!important}
+  header{padding:15px 5vw!important}
   .drawer{
-    top:66px!important;
-    right:10px!important;
-    width:min(290px,calc(100vw - 20px))!important;
-    max-height:calc(100dvh - 82px)!important;
-    padding:15px!important;
+    width:min(410px,90vw)!important;
+    height:100dvh!important;
+    padding:28px!important;
   }
-  .drawer-nav a{padding:9px 2px!important;font-size:.92rem!important}
-  .assistant-float{right:14px!important;bottom:78px!important}
-  .wa{right:14px!important;bottom:14px!important;width:54px!important;height:54px!important}
+  .drawer-nav a{padding:19px 4px!important;font-size:1.45rem!important}
+  .assistant-float{right:14px!important;bottom:82px!important;padding:9px 12px!important;font-size:.62rem!important}
+  .wa{right:16px!important;bottom:16px!important;width:54px!important;height:54px!important}
 }
 </style>
 </head>
