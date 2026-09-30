@@ -198,5 +198,109 @@ const menuToggle=document.getElementById("menuToggle"),drawer=document.getElemen
   if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();
 })();
 </script>
+<style id="pj-home-controls-final">
+/* Final homepage controls: match the inner-page floating layout. */
+header{
+  position:sticky!important;
+  top:0!important;
+  z-index:1000!important;
+}
+.menu-toggle{
+  position:relative!important;
+  z-index:1002!important;
+  pointer-events:auto!important;
+}
+.drawer-backdrop{
+  position:fixed!important;
+  inset:0!important;
+  z-index:1003!important;
+  pointer-events:none!important;
+}
+.drawer-backdrop.open{pointer-events:auto!important}
+.drawer{
+  position:fixed!important;
+  top:0!important;
+  right:0!important;
+  left:auto!important;
+  width:min(410px,90vw)!important;
+  height:100dvh!important;
+  z-index:1004!important;
+  pointer-events:auto!important;
+}
+.assistant-float{
+  position:fixed!important;
+  right:22px!important;
+  bottom:92px!important;
+  z-index:1005!important;
+  pointer-events:auto!important;
+}
+.wa{
+  position:fixed!important;
+  right:22px!important;
+  bottom:22px!important;
+  z-index:1005!important;
+  pointer-events:auto!important;
+}
+@media(max-width:560px){
+  .assistant-float{right:14px!important;bottom:82px!important}
+  .wa{right:14px!important;bottom:14px!important}
+}
+</style>
+<script id="pj-home-controls-final-js">
+(function(){
+  const menu=document.getElementById("menuToggle");
+  const drawer=document.getElementById("drawer");
+  const backdrop=document.getElementById("drawerBackdrop");
+  const close=document.getElementById("drawerClose");
+  const assistant=document.querySelector(".assistant-float");
+  if(!menu||!drawer||!backdrop)return;
+
+  function open(){
+    drawer.classList.add("open");
+    backdrop.classList.add("open");
+    menu.setAttribute("aria-expanded","true");
+    drawer.setAttribute("aria-hidden","false");
+    document.body.style.overflow="hidden";
+  }
+  function shut(){
+    drawer.classList.remove("open");
+    backdrop.classList.remove("open");
+    menu.setAttribute("aria-expanded","false");
+    drawer.setAttribute("aria-hidden","true");
+    document.body.style.overflow="";
+  }
+
+  menu.onclick=function(e){e.preventDefault();e.stopPropagation();open();};
+  close.onclick=function(e){e.preventDefault();e.stopPropagation();shut();};
+  backdrop.onclick=function(e){e.preventDefault();e.stopPropagation();shut();};
+
+  drawer.querySelectorAll(".drawer-nav a").forEach(function(a){
+    a.onclick=function(e){
+      const href=a.getAttribute("href")||"";
+      if(href.endsWith(".html")){
+        e.preventDefault();
+        shut();
+        setTimeout(function(){location.href=href},180);
+      }
+    };
+  });
+
+  if(assistant){
+    assistant.onclick=function(e){
+      const modal=document.querySelector(".assistant-modal");
+      if(modal){
+        e.preventDefault();
+        e.stopPropagation();
+        shut();
+        modal.classList.add("open");
+      }
+    };
+  }
+
+  document.addEventListener("keydown",function(e){
+    if(e.key==="Escape")shut();
+  });
+})();
+</script>
 </body>
 </html>
