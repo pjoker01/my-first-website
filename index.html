@@ -69,5 +69,21 @@ function draw(t){ctx.clearRect(0,0,w,h);for(const s of stars){s.a+=s.s;s.p+=.01;
 
 const carouselCards=[...document.querySelectorAll(".carousel-card")],carouselDots=[...document.querySelectorAll(".carousel-dots button")],carouselTrack=document.getElementById("carouselTrack");let carouselIndex=0,touchStartX=0,touchStartY=0;function renderCarousel(){carouselCards.forEach((card,i)=>{card.classList.remove("active","prev-card","next-card");if(i===carouselIndex)card.classList.add("active");else if(i===(carouselIndex-1+carouselCards.length)%carouselCards.length)card.classList.add("prev-card");else if(i===(carouselIndex+1)%carouselCards.length)card.classList.add("next-card")});carouselDots.forEach((d,i)=>d.classList.toggle("active",i===carouselIndex))}function moveCarousel(dir){carouselIndex=(carouselIndex+dir+carouselCards.length)%carouselCards.length;renderCarousel()}document.getElementById("carouselPrev").onclick=()=>moveCarousel(-1);document.getElementById("carouselNext").onclick=()=>moveCarousel(1);carouselDots.forEach((d,i)=>d.onclick=()=>{carouselIndex=i;renderCarousel()});carouselTrack.ontouchstart=e=>{touchStartX=e.changedTouches[0].clientX;touchStartY=e.changedTouches[0].clientY};carouselTrack.ontouchend=e=>{const dx=e.changedTouches[0].clientX-touchStartX,dy=e.changedTouches[0].clientY-touchStartY;if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy))moveCarousel(dx<0?1:-1)};renderCarousel();document.querySelectorAll('.drawer-nav a[href$=".html"]').forEach(a=>a.addEventListener("click",e=>{e.preventDefault();const href=a.getAttribute("href");setMenu(false);document.body.classList.add("leaving");setTimeout(()=>location.href=href,180)}));
 const menuToggle=document.getElementById("menuToggle"),drawer=document.getElementById("drawer"),drawerBackdrop=document.getElementById("drawerBackdrop"),drawerClose=document.getElementById("drawerClose");function setMenu(open){drawer.classList.toggle("open",open);drawerBackdrop.classList.toggle("open",open);menuToggle.setAttribute("aria-expanded",open);drawer.setAttribute("aria-hidden",!open);document.body.style.overflow=open?"hidden":""}menuToggle.addEventListener("click",()=>setMenu(true));drawerClose.addEventListener("click",()=>setMenu(false));drawerBackdrop.addEventListener("click",()=>setMenu(false));document.querySelectorAll(".drawer-nav a").forEach(a=>a.addEventListener("click",()=>setMenu(false)));addEventListener("keydown",e=>{if(e.key==="Escape")setMenu(false)});</script>
+
+<script>
+(function(){
+  const assistantUrl="https://pj-assistant.ai.studio/";
+  const modal=document.createElement("div");
+  modal.className="assistant-modal";
+  modal.innerHTML='<div class="assistant-modal-backdrop"></div><section class="assistant-panel" role="dialog" aria-modal="true" aria-label="PJ Assistant"><div class="assistant-head"><div class="assistant-head-title"><span class="assistant-head-icon">✦</span><span>PJ Assistant</span></div><button class="assistant-close" type="button" aria-label="Close PJ Assistant">×</button></div><iframe class="assistant-frame" title="PJ Assistant" src="'+assistantUrl+'"></iframe></section>';
+  document.body.appendChild(modal);
+  function openAssistant(e){e.preventDefault();e.stopPropagation();setMenu(false);modal.classList.add("open");}
+  function closeAssistant(){modal.classList.remove("open");}
+  document.querySelectorAll('a[href="'+assistantUrl+'"],a[data-assistant]').forEach(a=>a.addEventListener("click",openAssistant));
+  modal.querySelector(".assistant-close").addEventListener("click",closeAssistant);
+  modal.querySelector(".assistant-modal-backdrop").addEventListener("click",closeAssistant);
+  addEventListener("keydown",e=>{if(e.key==="Escape"&&modal.classList.contains("open"))closeAssistant()});
+})();
+</script>
 </body>
 </html>
