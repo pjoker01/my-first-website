@@ -5,7 +5,7 @@
 .home-title,.home-section-title{margin:0;font:800 clamp(3.5rem,7vw,7rem)/.88 "Bricolage Grotesque",sans-serif;letter-spacing:-.065em}
 .home-title em,.home-section-title em,.home-cta h2 em{font-style:normal;color:transparent;background:linear-gradient(100deg,#fff,#f4b860,#ff7043);background-clip:text;-webkit-background-clip:text}
 .home-lead{max-width:650px;margin:28px 0 0;color:#aaa7a0;font-size:1rem;line-height:1.8}
-.home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.home-micro{margin:18px 0 0;color:#716e68;font-size:.65rem}
+.home-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}.home-actions-center{justify-content:center}.home-micro{margin:18px 0 0;color:#716e68;font-size:.65rem}
 .home-visual{min-width:0;min-height:470px;position:relative;display:grid;place-items:center}
 .home-orbit{position:absolute;width:min(470px,95%);aspect-ratio:1.7;border:1px solid rgba(244,184,96,.2);border-radius:50%;transform:rotate(-18deg);box-shadow:0 0 55px rgba(244,184,96,.035)}
 .home-orbit.two{width:min(520px,100%);transform:rotate(24deg);border-color:rgba(255,255,255,.1)}
