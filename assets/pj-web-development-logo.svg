@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 800" role="img" aria-labelledby="title desc">
+<title>PJ Web Development</title><desc>Flat golden sunset logo with PJ monogram and Web Development text.</desc>
+<defs><linearGradient id="sky" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f05a3c"/><stop offset=".55" stop-color="#ff9a24"/><stop offset="1" stop-color="#ffd45a"/></linearGradient></defs>
+<rect width="800" height="800" rx="72" fill="url(#sky)"/>
+<circle cx="515" cy="300" r="145" fill="#ffd91a"/>
+<g fill="#d94a1f"><rect x="390" y="250" width="250" height="12" rx="6"/><rect x="380" y="280" width="270" height="12" rx="6"/><rect x="370" y="310" width="290" height="12" rx="6"/><rect x="360" y="340" width="310" height="12" rx="6"/></g>
+<g fill="#10151c"><path d="M105 125h150c93 0 143 45 143 119 0 69-50 113-137 113h-72v87h-84V125zm84 66v99h61c39 0 62-18 62-49 0-32-23-50-62-50h-61z"/><path d="M335 125h84v242c0 57-28 91-82 91-19 0-38-4-54-10l25-67c8 4 16 6 25 6 16 0 27-9 27-31V125z"/><path d="M102 464c94-63 192-67 292-8 94 56 183 51 296-7-95 88-208 110-315 52-94-51-176-48-273 20z"/></g>
+<text x="400" y="635" text-anchor="middle" fill="#10151c" font-family="Arial,Helvetica,sans-serif" font-size="62" font-weight="800" letter-spacing="1">Web Development</text>
+</svg>
