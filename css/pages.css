@@ -17,3 +17,15 @@
 a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--gold);outline-offset:4px;border-radius:6px}
 ::selection{background:rgba(244,184,96,.28);color:#fff}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto!important}.page{animation:none!important}}
+
+/* Service positioning for AI assistants and practical business automation */
+.solution-panel{background:linear-gradient(145deg,rgba(24,22,32,.82),rgba(13,13,18,.75));border-color:rgba(244,184,96,.16)}
+.solution-panel h2{max-width:24ch}
+.solution-panel a{color:#f4b860;text-decoration:underline;text-underline-offset:3px}
+.service-note{display:block;margin-top:12px;color:#8f8a82;font-size:.65rem;line-height:1.7}
+.assistant-visual:before{background:radial-gradient(ellipse at 72% 32%,rgba(155,126,255,.34),transparent 34%),linear-gradient(135deg,#29244a,#131324 62%,#090a12)}
+.assistant-content .visual-eyebrow{color:#c6b6ff}
+.assistant-content strong{max-width:78%;font-size:clamp(2rem,4vw,3.6rem)}
+.assistant-content .visual-cta{color:#ded4ff;border-color:rgba(222,212,255,.45)}
+.assistant-orb{position:absolute;right:4%;top:13%;width:92px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-size:2.1rem;color:#e5ddff;background:radial-gradient(circle at 30% 25%,#d7ccff,#7968d8 27%,#29244a 70%);box-shadow:inset -10px -10px 22px rgba(0,0,0,.6),0 0 55px rgba(132,111,255,.35)}
+@media(max-width:600px){.assistant-orb{width:70px;right:0}.assistant-content strong{max-width:80%}}
