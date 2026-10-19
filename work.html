@@ -152,4 +152,16 @@ document.querySelectorAll('.portfolio-filter').forEach(function(button){button.a
  buttons.forEach(function(button){button.setAttribute('aria-pressed','false');button.addEventListener('click',function(){rating=Number(button.dataset.rating);buttons.forEach(function(b){b.classList.toggle('is-selected',Number(b.dataset.rating)<=rating);b.setAttribute('aria-pressed',String(Number(b.dataset.rating)===rating));});showMessage('');});});
  form.addEventListener('submit',async function(e){e.preventDefault();showMessage('');if(rating<1){showMessage('Please choose a star rating from 1 to 5.','error');return;}var data=new FormData(form);var payload={reviewer_name:String(data.get('reviewer_name')||'').trim(),business_name:String(data.get('business_name')||'').trim(),review_text:String(data.get('review_text')||'').trim(),rating:rating,source:'website'};submit.disabled=true;submit.textContent='Submitting…';try{var response=await fetch(api,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)});var result=await response.json().catch(function(){return {};});if(!response.ok)throw new Error(result.error||'Could not submit your review. Please try again.');form.reset();rating=0;buttons.forEach(function(b){b.classList.remove('is-selected');b.setAttribute('aria-pressed','false');});showMessage(result.message||'Thank you. Your review is awaiting moderation.');}catch(err){showMessage(err.message||'Could not submit your review right now.','error');}finally{submit.disabled=false;submit.textContent='Submit review for moderation';}});
 })();
-</script></body></html>
+</script><style id="pj-premium-brand-cards">
+/* Brand artwork layered with a readable cinematic gradient */
+.portfolio-visual{position:relative;isolation:isolate;overflow:hidden;background-repeat:no-repeat;background-size:cover,clamp(100px,15vw,180px) auto;background-position:center,82% 48%;border:1px solid rgba(255,255,255,.12);transition:transform .35s,border-color .35s,box-shadow .35s}
+.portfolio-visual:before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(90deg,rgba(7,8,14,.94),rgba(7,8,14,.68) 48%,rgba(7,8,14,.25)),linear-gradient(0deg,rgba(7,8,14,.72),transparent 58%)}
+.portfolio-visual>*{position:relative;z-index:1}
+.portfolio-card:hover .portfolio-visual{transform:translateY(-3px);border-color:rgba(244,184,96,.5);box-shadow:0 22px 60px rgba(0,0,0,.32),0 0 28px rgba(244,184,96,.08)}
+.portfolio-visual.store-visual{background-image:linear-gradient(135deg,rgba(10,8,16,.92),rgba(18,11,26,.5)),url("https://www.google.com/s2/favicons?domain=pj-online-store.netlify.app&sz=256")}
+.portfolio-visual.city-visual{background-image:linear-gradient(135deg,rgba(5,14,16,.92),rgba(8,20,22,.48)),url("https://www.google.com/s2/favicons?domain=cityhaunters.vercel.app&sz=256")}
+.portfolio-visual.assistant-visual{background-image:linear-gradient(135deg,rgba(13,8,23,.93),rgba(19,12,36,.48)),url("https://www.google.com/s2/favicons?domain=pj-assistant.ai.studio&sz=256")}
+@media(max-width:600px){.portfolio-visual{background-size:cover,100px auto;background-position:center,90% 44%}}
+@media(prefers-reduced-motion:reduce){.portfolio-visual{transition:none}}
+</style>
+</body></html>
