@@ -78,4 +78,43 @@ msg('I can help you explore website demos, package levels, SEO basics, AI chat a
 document.getElementById('pjChatForm').addEventListener('submit',e=>{e.preventDefault();const v=input.value.trim();if(v)msg(v,'user');input.value='';sendText(v)});document.getElementById('pjChatLaunch').onclick=()=>{chat.classList.add('open');if(!body.children.length)welcome();input.focus()};document.getElementById('pjChatClose').onclick=()=>chat.classList.remove('open');welcome();
 })();
 </script>
+
+<style id="pj-unified-assistant-style">
+#pj-unified-assistant-launch{position:fixed;right:20px;bottom:20px;z-index:9998;display:flex;align-items:center;gap:10px;border:1px solid rgba(255,190,126,.55);border-radius:999px;padding:12px 17px;background:linear-gradient(125deg,#ffd39a,#ff965f 65%,#e96a4b);color:#291713;font:800 13px Manrope,Arial,sans-serif;box-shadow:0 10px 38px rgba(0,0,0,.3),0 0 25px rgba(255,145,79,.22);cursor:pointer}
+#pj-unified-assistant-launch .pj-sun-icon{display:grid;place-items:center;width:22px;height:22px;border-radius:50%;background:radial-gradient(circle at 32% 25%,#fff6cf,#ffb45e 40%,#f05b42 72%,#632c56);color:#fff9e9;font-size:13px;box-shadow:0 0 15px rgba(255,145,79,.5)}
+#pj-unified-assistant-panel{position:fixed;right:20px;bottom:78px;z-index:9999;width:min(410px,calc(100vw - 24px));height:min(690px,calc(100dvh - 108px));min-height:390px;border:1px solid rgba(255,190,126,.35);border-radius:23px;overflow:hidden;background:#090910;box-shadow:0 24px 80px rgba(0,0,0,.55),0 0 35px rgba(255,133,79,.1);display:none}
+#pj-unified-assistant-panel.is-open{display:block;animation:pjAssistantPanelIn .22s ease-out}
+#pj-unified-assistant-panel iframe{display:block;width:100%;height:100%;border:0;background:#090910}
+#pj-unified-assistant-panel .pj-assistant-open-full{position:absolute;right:10px;top:10px;z-index:2;border:1px solid rgba(255,220,190,.22);border-radius:999px;padding:7px 10px;background:rgba(14,12,18,.88);color:#ffe0c0;font:600 10px Manrope,Arial,sans-serif;text-decoration:none;backdrop-filter:blur(10px)}
+@keyframes pjAssistantPanelIn{from{opacity:0;transform:translateY(9px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:520px){#pj-unified-assistant-launch{right:12px;bottom:12px;padding:11px 14px}#pj-unified-assistant-panel{right:8px;bottom:68px;width:calc(100vw - 16px);height:calc(100dvh - 86px);max-height:760px;border-radius:19px}}
+@media(prefers-reduced-motion:reduce){#pj-unified-assistant-panel.is-open{animation:none}}
+/* The legacy inline sales bot is replaced by the shared PJ Assistant. */
+#pjChatLaunch,#pjChat{display:none!important}
+</style>
+<div id="pj-unified-assistant-panel" aria-label="PJ Assistant chat panel" aria-hidden="true">
+  <a class="pj-assistant-open-full" href="https://assistant.pjwebdev.online/assistant" target="_blank" rel="noopener noreferrer">Open full assistant ↗</a>
+  <iframe title="PJ Web Development Assistant" src="about:blank" data-src="https://assistant.pjwebdev.online/assistant" allow="microphone; autoplay; clipboard-write" referrerpolicy="strict-origin-when-cross-origin"></iframe>
+</div>
+<button id="pj-unified-assistant-launch" type="button" aria-controls="pj-unified-assistant-panel" aria-expanded="false">
+  <span class="pj-sun-icon" aria-hidden="true">✦</span><span>Talk to PJ</span>
+</button>
+<script>
+(function(){
+  var button=document.getElementById('pj-unified-assistant-launch');
+  var panel=document.getElementById('pj-unified-assistant-panel');
+  if(!button||!panel)return;
+  var frame=panel.querySelector('iframe');
+  function setOpen(open){
+    panel.classList.toggle('is-open',open);
+    panel.setAttribute('aria-hidden',String(!open));
+    button.setAttribute('aria-expanded',String(open));
+    button.querySelector('span:last-child').textContent=open?'Close assistant':'Talk to PJ';
+    if(open&&frame&&frame.getAttribute('src')==='about:blank')frame.setAttribute('src',frame.dataset.src);
+  }
+  button.addEventListener('click',function(){setOpen(!panel.classList.contains('is-open'));});
+  document.addEventListener('keydown',function(event){if(event.key==='Escape')setOpen(false);});
+})();
+</script>
+
 </body></html>
