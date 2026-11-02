@@ -83,3 +83,10 @@
 .home-solution:first-child>p:not(.solution-label){color:#c0bacf}
 .home-solution:first-child>a{color:#d8cbff}
 @media(max-width:600px){.home-solution:first-child h3{font-size:1.5rem}}
+
+
+/* PJ brand seal: make the hero signature read like a real stamped mark. */
+.home-showcase-badge{right:27px;bottom:22px;border:2px solid rgba(255,154,91,.78);border-radius:5px;padding:9px 13px;color:#ffc18e;background:rgba(130,48,24,.12);font-size:.58rem;letter-spacing:.16em;font-weight:900;transform:rotate(-8deg);box-shadow:0 0 0 3px rgba(255,154,91,.08),inset 0 0 0 1px rgba(255,205,158,.14),0 7px 20px rgba(0,0,0,.22);text-shadow:0 0 14px rgba(255,146,78,.28)}
+.home-showcase-badge:before{content:"✦";display:inline-block;margin-right:7px;color:#ff9a5b;font-size:.72rem}
+.home-showcase-badge:after{content:"";position:absolute;inset:3px;border:1px dashed rgba(255,191,142,.35);border-radius:2px;pointer-events:none}
+@media(max-width:600px){.home-showcase-badge{right:18px;bottom:18px;font-size:.52rem;padding:8px 10px}}
