@@ -1,0 +1,46 @@
+/* PJ PREMIUM CINEMATIC HOME — progressive enhancement layer.
+   Existing homepage styles remain the baseline and are untouched. */
+#pj-cinematic-stage{position:fixed;inset:0;z-index:0;pointer-events:none;overflow:hidden;opacity:.92}
+#pj-cinematic-stage canvas{display:block;width:100%;height:100%}
+#pj-cinematic-progress{position:fixed;top:0;left:0;width:100%;height:2px;z-index:10010;pointer-events:none;background:rgba(255,255,255,.035)}
+#pj-cinematic-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#ffe1a9,#ffad53,#ff633b);box-shadow:0 0 14px rgba(255,139,65,.85);transform-origin:left}
+#pj-cinematic-label{position:fixed;left:clamp(14px,3vw,38px);bottom:22px;z-index:8;pointer-events:none;color:rgba(255,222,184,.58);font:800 9px/1 Manrope,sans-serif;letter-spacing:.22em;text-transform:uppercase;opacity:0;transition:opacity .35s}
+#pj-cinematic-label.is-visible{opacity:1}
+body.pj-cinematic-ready .topbar,
+body.pj-cinematic-ready .home-main,
+body.pj-cinematic-ready .page-footer{position:relative;z-index:2}
+body.pj-cinematic-ready .drawer,
+body.pj-cinematic-ready .drawer-backdrop,
+body.pj-cinematic-ready .wa,
+body.pj-cinematic-ready #pj-unified-assistant-launch,
+body.pj-cinematic-ready #pj-unified-assistant-panel{z-index:10002}
+body.pj-cinematic-ready .home-hero{isolation:isolate}
+body.pj-cinematic-ready .home-visual{perspective:1100px;transform-style:preserve-3d}
+body.pj-cinematic-ready .home-showcase{transform:rotateY(-9deg) rotateX(3deg) rotateZ(-2deg);transform-style:preserve-3d;transition:transform .65s cubic-bezier(.2,.7,.2,1),box-shadow .65s}
+body.pj-cinematic-ready .home-showcase:hover{transform:rotateY(-2deg) rotateX(0) translateY(-7px);box-shadow:0 40px 110px rgba(0,0,0,.56),0 0 48px rgba(255,172,85,.09)}
+body.pj-cinematic-ready .home-strip,
+body.pj-cinematic-ready .home-section,
+body.pj-cinematic-ready .home-solutions,
+body.pj-cinematic-ready .home-feature,
+body.pj-cinematic-ready .home-pricing,
+body.pj-cinematic-ready .home-faq,
+body.pj-cinematic-ready .home-cta{transform:translate3d(0,var(--pj-reveal-y,0),0);opacity:var(--pj-reveal-opacity,1);transition:opacity .8s ease,transform .9s cubic-bezier(.2,.7,.2,1)}
+body.pj-cinematic-ready .home-service,
+body.pj-cinematic-ready .home-solution,
+body.pj-cinematic-ready .home-project,
+body.pj-cinematic-ready .home-price{transform-style:preserve-3d;backface-visibility:hidden}
+body.pj-cinematic-ready .home-service:hover,
+body.pj-cinematic-ready .home-solution:hover,
+body.pj-cinematic-ready .home-project:hover,
+body.pj-cinematic-ready .home-price:hover{transform:translateY(-7px) rotateX(1deg);box-shadow:0 24px 65px rgba(0,0,0,.28)}
+body.pj-cinematic-ready .home-number{color:#ffc477}
+body.pj-cinematic-ready .home-section-title em,
+body.pj-cinematic-ready .home-title em{filter:drop-shadow(0 0 24px rgba(255,154,76,.15))}
+@media(max-width:700px){
+ #pj-cinematic-label{bottom:13px;font-size:8px}
+ body.pj-cinematic-ready .home-showcase{transform:rotateY(-4deg) rotateX(2deg) rotateZ(-1deg)}
+}
+@media(prefers-reduced-motion:reduce){
+ #pj-cinematic-stage,#pj-cinematic-progress,#pj-cinematic-label{display:none!important}
+ body.pj-cinematic-ready .home-strip,body.pj-cinematic-ready .home-section,body.pj-cinematic-ready .home-solutions,body.pj-cinematic-ready .home-feature,body.pj-cinematic-ready .home-pricing,body.pj-cinematic-ready .home-faq,body.pj-cinematic-ready .home-cta{opacity:1!important;transform:none!important;transition:none!important}
+}
