@@ -1,0 +1,20 @@
+/* PJ cinematic scroll chapter — isolated to the homepage experience */
+.pj-cinema{position:relative;height:420vh;margin:0;background:#05050a;isolation:isolate}
+.pj-cinema-stage{position:sticky;top:0;height:100svh;min-height:620px;overflow:hidden;background:radial-gradient(ellipse at 72% 50%,#21142a 0%,#0a0a17 43%,#05050a 100%)}
+#pj-cinema-canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.pj-cinema-vignette{position:absolute;inset:0;pointer-events:none;background:linear-gradient(90deg,rgba(5,5,10,.94) 0%,rgba(5,5,10,.76) 33%,rgba(5,5,10,.12) 72%,rgba(5,5,10,.28) 100%),linear-gradient(0deg,rgba(5,5,10,.72),transparent 25%,transparent 78%,rgba(5,5,10,.4)}
+.pj-cinema-topline{position:absolute;top:28px;left:5.5vw;right:5.5vw;display:flex;justify-content:space-between;color:#d7c2a6;font-size:.58rem;font-weight:800;letter-spacing:.2em}
+.pj-cinema-topline span:last-child{color:#aaa4b1}.pj-cinema-topline b{color:#ffad68;font-size:1rem;margin-left:9px}
+.pj-cinema-copy{position:absolute;left:9vw;top:50%;transform:translateY(-48%);width:min(520px,43vw);color:#fff;transition:opacity .25s}
+.pj-cinema-kicker{margin:0 0 20px;color:#ffb56e;font-size:.62rem;font-weight:800;letter-spacing:.22em}
+.pj-cinema-copy h2{margin:0;font:800 clamp(3.6rem,7.5vw,7.5rem)/.86 "Bricolage Grotesque",sans-serif;letter-spacing:-.075em}
+.pj-cinema-copy h2 em{font-style:normal;color:transparent;background:linear-gradient(100deg,#fff1d8,#ffb15f,#fa684e);background-clip:text;-webkit-background-clip:text}
+.pj-cinema-copy>p:not(.pj-cinema-kicker){max-width:430px;margin:24px 0 0;color:#b8b1bd;font-size:.9rem;line-height:1.85}
+.pj-cinema-link{display:inline-flex;gap:18px;align-items:center;margin-top:30px;padding:14px 18px;border:1px solid rgba(255,183,111,.45);border-radius:999px;color:#ffd3a4;font-size:.61rem;font-weight:900;letter-spacing:.13em;background:rgba(255,170,90,.06);backdrop-filter:blur(12px)}
+.pj-cinema-link span{font-size:1rem}.pj-cinema-progress{position:absolute;left:5.5vw;bottom:38px;width:min(240px,34vw);height:2px;background:rgba(255,255,255,.16)}
+.pj-cinema-progress span{display:block;width:0;height:100%;background:linear-gradient(90deg,#ff744e,#ffd18b);box-shadow:0 0 12px #ff9d5d}
+.pj-cinema-scene-count{position:absolute;right:5.5vw;bottom:30px;color:#ffbf82;font:800 1.3rem "Bricolage Grotesque"}
+.pj-cinema-scene-count i{color:#817986;font-size:.75rem;font-style:normal}
+.pj-cinema-hint{position:absolute;left:5.5vw;bottom:15px;color:#77717e;font-size:.55rem;letter-spacing:.08em}
+@media(max-width:760px){.pj-cinema{height:390vh}.pj-cinema-stage{min-height:560px}.pj-cinema-vignette{background:linear-gradient(0deg,rgba(5,5,10,.94),rgba(5,5,10,.65) 48%,rgba(5,5,10,.08) 100%)}.pj-cinema-copy{left:7vw;right:7vw;top:auto;bottom:13%;transform:none;width:auto}.pj-cinema-copy h2{font-size:clamp(3.3rem,14vw,5.5rem)}.pj-cinema-copy>p:not(.pj-cinema-kicker){font-size:.8rem;max-width:390px}.pj-cinema-topline{left:7vw;right:7vw;top:20px;font-size:.5rem}.pj-cinema-progress{left:7vw;bottom:32px;width:38vw}.pj-cinema-scene-count{right:7vw;bottom:23px}.pj-cinema-hint{left:7vw;bottom:11px;font-size:.48rem}}
+@media(prefers-reduced-motion:reduce){.pj-cinema{height:auto}.pj-cinema-stage{position:relative;height:680px}.pj-cinema-copy{opacity:1!important}}
