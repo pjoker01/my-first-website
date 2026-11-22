@@ -2,7 +2,7 @@ const canvas=document.getElementById("space");if(!canvas){console.warn("PJ pages
 
 // PJ Assistant opens inside the current page instead of navigating away.
 (function(){
-  const assistantUrl="https://pj-assistant.ai.studio/";
+  const assistantUrl="https://assistant.pjwebdev.online/assistant?embed=true";
   const modal=document.createElement("div");
   modal.className="assistant-modal";
   modal.innerHTML='<div class="assistant-modal-backdrop"></div><section class="assistant-panel" role="dialog" aria-modal="true" aria-label="PJ Assistant"><div class="assistant-head"><div class="assistant-head-title"><span class="assistant-head-icon">✦</span><span>PJ Assistant</span></div><button class="assistant-close" type="button" aria-label="Close PJ Assistant">×</button></div><iframe class="assistant-frame" title="PJ Assistant" src="'+assistantUrl+'"></iframe></section>';
