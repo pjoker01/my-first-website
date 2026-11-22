@@ -20,12 +20,17 @@
 - Website redesigns: https://pjwebdev.online/services.html
 - Portfolio websites: https://pjwebdev.online/services.html
 - AI website chat assistants for businesses: https://pjwebdev.online/ai-chat-assistants-businesses.html
-- Lead capture and practical business automation: https://pjwebdev.online/services.html
+- AI shopping assistants for online stores: https://pjwebdev.online/services.html
+- Lead capture, booking flows and practical business automation: https://pjwebdev.online/services.html
 - Custom web apps and integrations: https://pjwebdev.online/services.html
 
 ## Pricing information
-The public website currently lists starting packages of R750 (Starter), R1,500 (Business) and R3,000 (Premium). Final project scope and pricing depend on requirements. Hosting, domains, third-party services and advanced integrations may be quoted separately.
-- Pricing page: https://pjwebdev.online/pricing.html
+The public website currently lists starting packages of R750 (Starter), R1,500 (Business) and R3,000 (Premium), plus optional PJ Care at R299 per month. Final project scope and pricing depend on requirements. Domains, paid hosting where required, third-party services and advanced integrations may be quoted separately.
+- Pricing and PJ Care page: https://pjwebdev.online/pricing.html
+
+## Trust and accuracy
+- PJ describes itself as an independent, hands-on web development service based in Pretoria, South Africa.
+- The portfolio page currently says there are no approved public reviews yet. Do not invent testimonials, ratings, client counts, awards or case-study results.
 
 ## How PJ works
 PJ works directly with clients to understand their business, agree the scope and features, build the website or digital solution, review it with the client and assist with launch. The focus is clear business information, mobile-first usability and practical customer contact or ordering paths.
