@@ -9,6 +9,7 @@
 - Service area: Pretoria, Gauteng and clients across South Africa
 - Public contact / WhatsApp: +27 61 014 0065
 - Contact page: https://pjwebdev.online/contact.html
+- Customer support: https://pjwebdev.online/support.html
 - About the business: https://pjwebdev.online/about.html
 
 ## Services
@@ -41,6 +42,7 @@ PJ works directly with clients to understand their business, agree the scope and
 - Work and portfolio: https://pjwebdev.online/work.html
 - Pricing: https://pjwebdev.online/pricing.html
 - Contact: https://pjwebdev.online/contact.html
+- Support: https://pjwebdev.online/support.html
 - Get a website: https://pjwebdev.online/get-a-website.html
 - Online store development: https://pjwebdev.online/online-store-development-south-africa.html
 - AI chat assistants: https://pjwebdev.online/ai-chat-assistants-businesses.html
