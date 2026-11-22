@@ -136,3 +136,7 @@
 
 /* Prevent the innovation headline from clipping on narrow screens. */
 @media(max-width:560px){.pj-innovation-copy h2{overflow-wrap:anywhere;word-break:normal}}
+
+
+/* Accessibility: raise muted homepage copy to readable contrast on the dark surfaces. */
+.home-micro,.home-strip-item span,.home-section-intro,.home-service p,.home-project-copy span,.home-feature-row,.home-price p,.home-price ul,.home-cta p,.home-faq-list details p,.home-solution-note{color:#b8b3aa}
