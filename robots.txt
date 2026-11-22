@@ -1,6 +1,12 @@
-# Public website pages are available to search engines and AI answer engines.
+# Search visibility: allow search/retrieval crawlers while keeping model-training crawlers separate.
 User-agent: OAI-SearchBot
 Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
 
 User-agent: PerplexityBot
 Allow: /
@@ -8,7 +14,18 @@ Allow: /
 User-agent: Claude-SearchBot
 Allow: /
 
+User-agent: Claude-User
+Allow: /
+
+User-agent: ClaudeBot
+Disallow: /
+
 User-agent: Googlebot
+Allow: /
+
+# Google-Extended also controls grounding in Gemini Apps, not just model training.
+# Allow it so PJ can be considered for Gemini Apps grounding.
+User-agent: Google-Extended
 Allow: /
 
 User-agent: bingbot
