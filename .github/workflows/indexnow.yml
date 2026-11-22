@@ -1,0 +1,72 @@
+name: Notify search engines with IndexNow
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "**/*.html"
+      - "sitemap.xml"
+      - "robots.txt"
+      - "llms.txt"
+  workflow_dispatch:
+  schedule:
+    # Daily retry after the production deployment window; South Africa is UTC+2.
+    - cron: "15 11 * * *"
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pjwebdev-indexnow
+  cancel-in-progress: false
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verify the public IndexNow key is live
+        id: verify
+        env:
+          INDEXNOW_KEY: "pjwebdev-indexnow-2026-11-22-7f3c9a2e4b6d8f10"
+        run: |
+          set -euo pipefail
+          key_url="https://pjwebdev.online/${INDEXNOW_KEY}.txt"
+          body="$(curl --connect-timeout 10 --max-time 30 -fsS "$key_url" || true)"
+          if [ "$body" != "$INDEXNOW_KEY" ]; then
+            echo "IndexNow key file is not live yet; skipping this run."
+            echo "ready=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          echo "ready=true" >> "$GITHUB_OUTPUT"
+
+      - name: Submit sitemap URLs to IndexNow
+        if: steps.verify.outputs.ready == 'true'
+        env:
+          INDEXNOW_KEY: "pjwebdev-indexnow-2026-11-22-7f3c9a2e4b6d8f10"
+        run: |
+          set -euo pipefail
+          sitemap="$(curl --connect-timeout 10 --max-time 30 -fsS https://pjwebdev.online/sitemap.xml)"
+          mapfile -t urls < <(printf '%s' "$sitemap" | sed -n 's:.*<loc>\([^<]*\)</loc>.*:\1:p' | sort -u)
+          if [ "${#urls[@]}" -eq 0 ]; then
+            echo "No sitemap URLs were found."
+            exit 1
+          fi
+          urls_json="$(printf '%s\n' "${urls[@]}" | jq -R . | jq -s .)"
+          payload="$(jq -n \
+            --arg host "pjwebdev.online" \
+            --arg key "$INDEXNOW_KEY" \
+            --arg keyLocation "https://pjwebdev.online/${INDEXNOW_KEY}.txt" \
+            --argjson urlList "$urls_json" \
+            '{host:$host,key:$key,keyLocation:$keyLocation,urlList:$urlList}')"
+          code="$(curl --connect-timeout 10 --max-time 45 -sS \
+            -o /tmp/indexnow-response.txt -w "%{http_code}" \
+            -X POST "https://api.indexnow.org/indexnow" \
+            -H "Content-Type: application/json; charset=utf-8" \
+            --data "$payload")"
+          cat /tmp/indexnow-response.txt || true
+          if [ "$code" != "200" ] && [ "$code" != "202" ]; then
+            echo "IndexNow returned HTTP $code."
+            exit 1
+          fi
+          echo "IndexNow accepted ${#urls[@]} sitemap URLs (HTTP $code)."
