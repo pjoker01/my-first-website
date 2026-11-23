@@ -29,3 +29,17 @@ a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var
 .assistant-content .visual-cta{color:#ded4ff;border-color:rgba(222,212,255,.45)}
 .assistant-orb{position:absolute;right:4%;top:13%;width:92px;aspect-ratio:1;border-radius:50%;display:grid;place-items:center;font-size:2.1rem;color:#e5ddff;background:radial-gradient(circle at 30% 25%,#d7ccff,#7968d8 27%,#29244a 70%);box-shadow:inset -10px -10px 22px rgba(0,0,0,.6),0 0 55px rgba(132,111,255,.35)}
 @media(max-width:600px){.assistant-orb{width:70px;right:0}.assistant-content strong{max-width:80%}}
+
+/* Contact page: practical project-start information */
+.contact-information{margin-top:58px;padding:34px;border:1px solid rgba(255,255,255,.10);border-radius:28px;background:radial-gradient(circle at 12% 0,rgba(244,184,96,.10),transparent 42%),rgba(255,255,255,.025)}
+.contact-information-copy{max-width:760px}
+.contact-information-copy h2{margin:15px 0 16px;font:800 clamp(2rem,4vw,3.6rem)/.98 "Bricolage Grotesque";letter-spacing:-.055em}
+.contact-information-copy h2 em{font-style:normal;color:transparent;background:linear-gradient(100deg,#fff,var(--gold),#ff7951);background-clip:text;-webkit-background-clip:text}
+.contact-information-copy>p:last-child{max-width:720px;color:#99958d;font-size:.86rem;line-height:1.85}
+.contact-information-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:28px}
+.contact-information-item{min-width:0;padding:22px;border:1px solid var(--line);border-radius:18px;background:rgba(5,6,10,.48)}
+.contact-information-item>span{display:block;color:var(--gold);font-size:.58rem;font-weight:800;letter-spacing:.13em}
+.contact-information-item strong{display:block;margin-top:14px;font:700 1.15rem "Bricolage Grotesque";color:#f5f1e9}
+.contact-information-item p{margin:9px 0 0;color:#89867f;font-size:.73rem;line-height:1.8}
+.contact-information-note{margin:22px 0 0;padding-top:16px;border-top:1px solid var(--line);color:#a19b91;font-size:.7rem;line-height:1.8}
+@media(max-width:800px){.contact-information{padding:25px 20px}.contact-information-grid{grid-template-columns:1fr}}
