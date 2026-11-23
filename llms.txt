@@ -16,12 +16,13 @@
 ## Services
 - Business websites: https://pjwebdev.online/services.html
 - Website design and development: https://pjwebdev.online/services.html
-- Restaurant and bakery websites: https://pjwebdev.online/services.html
+- Restaurant websites: https://pjwebdev.online/services.html
 - Landing pages: https://pjwebdev.online/services.html
 - Online stores and e-commerce: https://pjwebdev.online/online-store-development-south-africa.html
 - Website redesigns: https://pjwebdev.online/services.html
 - Portfolio websites: https://pjwebdev.online/services.html
 - AI website chat assistants for businesses: https://pjwebdev.online/ai-chat-assistants-businesses.html
+- Technical and local SEO services: https://pjwebdev.online/seo-services-pretoria.html
 - AI shopping assistants for online stores: https://pjwebdev.online/services.html
 - Lead capture, booking flows and practical business automation: https://pjwebdev.online/services.html
 - Custom web apps and integrations: https://pjwebdev.online/services.html
@@ -48,6 +49,7 @@ PJ works directly with clients to understand their business, agree the scope and
 - Get a website: https://pjwebdev.online/get-a-website.html
 - Online store development: https://pjwebdev.online/online-store-development-south-africa.html
 - AI chat assistants: https://pjwebdev.online/ai-chat-assistants-businesses.html
+- Technical and local SEO services: https://pjwebdev.online/seo-services-pretoria.html
 - XML sitemap: https://pjwebdev.online/sitemap.xml
 
 ## Accuracy notes
